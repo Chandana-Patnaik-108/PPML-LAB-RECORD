@@ -1,0 +1,238 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPKu7U1A4MF0aDBppjeYFjK",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_04\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pOyuF-6n8vHO",
+        "outputId": "4eb22e60-e518-486e-979b-408982457a73"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 12\n",
+            "Enter a number: 23\n",
+            "Enter a number: 122\n",
+            "Enter a number: 45\n",
+            "Enter a number: 67\n",
+            "Enter a number: 45\n",
+            "Enter a number: 77\n",
+            "Enter a number: 33\n",
+            "Enter a number: 44\n",
+            "Enter a number: 55\n",
+            "Second largest: 77\n",
+            "Second smallest: 23\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. WAP to print the second largest and second smallest element in a list of 10 integers without using sort function.\n",
+        "lst = []\n",
+        "\n",
+        "for i in range(10):\n",
+        "    num = int(input(\"Enter a number: \"))\n",
+        "    lst.append(num)\n",
+        "\n",
+        "largest = second_largest = float('-inf')\n",
+        "smallest = second_smallest = float('inf')\n",
+        "\n",
+        "for num in lst:\n",
+        "    if num > largest:\n",
+        "        second_largest = largest\n",
+        "        largest = num\n",
+        "    elif num > second_largest and num != largest:\n",
+        "        second_largest = num\n",
+        "\n",
+        "    if num < smallest:\n",
+        "        second_smallest = smallest\n",
+        "        smallest = num\n",
+        "    elif num < second_smallest and num != smallest:\n",
+        "        second_smallest = num\n",
+        "\n",
+        "print(\"Second largest:\", second_largest)\n",
+        "print(\"Second smallest:\", second_smallest)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP to create two lists first list containing 5 integers and second list containing 5 strings.print both the lists one element from each list combined at a time.\n",
+        "list1 = [10, 20, 30, 40, 50]\n",
+        "list2 = [\"Apple\", \"Banana\", \"Mango\", \"Orange\", \"Grapes\"]\n",
+        "\n",
+        "for i in range(5):\n",
+        "    print(list1[i], list2[i])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "L0ldkZCX8__v",
+        "outputId": "37b41685-0d8d-460d-8846-d923ff65154e"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10 Apple\n",
+            "20 Banana\n",
+            "30 Mango\n",
+            "40 Orange\n",
+            "50 Grapes\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to create an integer list of 20 elements increase the odd valued elements by 5.\n",
+        "lst = []\n",
+        "\n",
+        "for i in range(20):\n",
+        "    num = int(input(\"Enter a number: \"))\n",
+        "    lst.append(num)\n",
+        "\n",
+        "for i in range(20):\n",
+        "    if lst[i] % 2 != 0:\n",
+        "        lst[i] = lst[i] + 5\n",
+        "\n",
+        "print(\"Updated list:\", lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Uo6P0bvC9J5K",
+        "outputId": "48be87b7-91c7-4702-a313-7c85e8b0bdeb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Enter a number: 5\n",
+            "Enter a number: 1\n",
+            "Enter a number: 2\n",
+            "Enter a number: 3\n",
+            "Enter a number: 4\n",
+            "Enter a number: 6\n",
+            "Enter a number: 67\n",
+            "Enter a number: 22\n",
+            "Enter a number: 44\n",
+            "Enter a number: 66\n",
+            "Enter a number: 54\n",
+            "Enter a number: 23\n",
+            "Enter a number: 1111\n",
+            "Enter a number: 121\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to create a function that prints the first 15 terms of the fibonacci series without using recursion.\n",
+        "def fibonacci():\n",
+        "    a = 0\n",
+        "    b = 1\n",
+        "\n",
+        "    for i in range(15):\n",
+        "        print(a, end=\" \")\n",
+        "        c = a + b\n",
+        "        a = b\n",
+        "        b = c\n",
+        "\n",
+        "fibonacci()"
+      ],
+      "metadata": {
+        "id": "0sdrGKoH9bf1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP to create a function that takes list as argument and returns the even values of the list.Print the new list with even values.\n",
+        "def even_list(lst):\n",
+        "    new_list = []\n",
+        "\n",
+        "    for num in lst:\n",
+        "        if num % 2 == 0:\n",
+        "            new_list.append(num)\n",
+        "\n",
+        "    return new_list\n",
+        "\n",
+        "\n",
+        "lst = [10, 15, 20, 25, 30, 35, 40, 45]\n",
+        "\n",
+        "result = even_list(lst)\n",
+        "\n",
+        "print(\"List with even values:\", result)\n"
+      ],
+      "metadata": {
+        "id": "2AeWe1t99g9C"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. WAP to calculate factorial of a number using recursion.\n",
+        "def factorial(n):\n",
+        "    if n == 0 or n == 1:\n",
+        "        return 1\n",
+        "    else:\n",
+        "        return n * factorial(n - 1)\n",
+        "\n",
+        "\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "result = factorial(num)\n",
+        "\n",
+        "print(\"Factorial =\", result)"
+      ],
+      "metadata": {
+        "id": "HIGkrLCf9ptJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
