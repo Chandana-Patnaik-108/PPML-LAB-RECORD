@@ -1,0 +1,256 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMfNfhoJuDtFHgQTCcg2LiR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_03\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KyblizhT65-c",
+        "outputId": "00f1ad73-c544-4d2c-8c20-c3a368828c2c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the value of N: 77\n",
+            "3 5\n",
+            "5 7\n",
+            "11 13\n",
+            "17 19\n",
+            "29 31\n",
+            "41 43\n",
+            "59 61\n",
+            "71 73\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. WAP to print twin prime numbers between 1 to N.\n",
+        "n = int(input(\"Enter the value of N: \"))\n",
+        "\n",
+        "for i in range(2, n):\n",
+        "    prime1 = True\n",
+        "    prime2 = True\n",
+        "\n",
+        "    for j in range(2, i):\n",
+        "        if i % j == 0:\n",
+        "            prime1 = False\n",
+        "            break\n",
+        "\n",
+        "    for j in range(2, i + 2):\n",
+        "        if (i + 2) % j == 0:\n",
+        "            prime2 = False\n",
+        "            break\n",
+        "\n",
+        "    if prime1 and prime2 and i + 2 <= n:\n",
+        "        print(i, i + 2)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP to find the factorial of a number.\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "fact = 1\n",
+        "\n",
+        "for i in range(1, num + 1):\n",
+        "    fact = fact * i\n",
+        "\n",
+        "print(\"Factorial =\", fact)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HkSkDHAl7L_Y",
+        "outputId": "b4dd0af2-2d9b-44c5-e279-f7693b5085eb"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 77\n",
+            "Factorial = 145183092028285869634070784086308284983740379224208358846781574688061991349156420080065207861248000000000000000000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to check the leap year.\n",
+        "year = int(input(\"Enter a year: \"))\n",
+        "\n",
+        "if year % 400 == 0:\n",
+        "    print(\"Leap Year\")\n",
+        "elif year % 100 == 0:\n",
+        "    print(\"Not a Leap Year\")\n",
+        "elif year % 4 == 0:\n",
+        "    print(\"Leap Year\")\n",
+        "else:\n",
+        "    print(\"Not a Leap Year\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Exj8mVVg7Vhy",
+        "outputId": "2d8db310-b970-46f0-ec51-eca62433e315"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a year: 1920\n",
+            "Leap Year\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to check whether the string is symmetrical or palindrome.\n",
+        "str1 = input(\"Enter a string: \")\n",
+        "\n",
+        "mid = len(str1) // 2\n",
+        "\n",
+        "if len(str1) % 2 == 0:\n",
+        "    first = str1[:mid]\n",
+        "    second = str1[mid:]\n",
+        "else:\n",
+        "    first = str1[:mid]\n",
+        "    second = str1[mid+1:]\n",
+        "\n",
+        "if first == second:\n",
+        "    print(\"Symmetrical String\")\n",
+        "else:\n",
+        "    print(\"Not a Symmetrical String\")\n",
+        "\n",
+        "if str1 == str1[::-1]:\n",
+        "    print(\"Palindrome String\")\n",
+        "else:\n",
+        "    print(\"Not a Palindrome String\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sHROqTKJ7fC5",
+        "outputId": "9c6c01ac-a897-44a5-a536-026264890088"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: MADAM\n",
+            "Not a Symmetrical String\n",
+            "Palindrome String\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP to print even length words in a string.\n",
+        "str1 = input(\"Enter a string: \")\n",
+        "\n",
+        "words = str1.split()\n",
+        "\n",
+        "print(\"Even length words are:\")\n",
+        "\n",
+        "for word in words:\n",
+        "    if len(word) % 2 == 0:\n",
+        "        print(word)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0ma--ATk7o63",
+        "outputId": "5107335d-b11b-49b9-db46-0029a7429084"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: HELLO\n",
+            "Even length words are:\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. WAP to remove all duplicates from a given string.\n",
+        "str1 = input(\"Enter a string: \")\n",
+        "\n",
+        "result = \"\"\n",
+        "\n",
+        "for ch in str1:\n",
+        "    if ch not in result:\n",
+        "        result = result + ch\n",
+        "\n",
+        "print(\"String after removing duplicates:\", result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9ehD1S8f7xia",
+        "outputId": "0dbacbee-2936-4b3e-f6c2-5ce7bcefab58"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: SCHOOL\n",
+            "String after removing duplicates: SCHOL\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
