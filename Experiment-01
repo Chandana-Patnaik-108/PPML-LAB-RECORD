@@ -1,0 +1,184 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNxu2XpFcDiZkrrrlmCZYDF",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/Experiment-01\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "4M7FCwNEvfWs"
+      },
+      "outputs": [],
+      "source": [
+        "#1.Arithmetic Operations on Two Integers\n",
+        "a = int(input(\"Enter first integer: \"))\n",
+        "b = int(input(\"Enter second integer: \"))\n",
+        "\n",
+        "print(\"Addition =\", a + b)\n",
+        "print(\"Subtraction =\", a - b)\n",
+        "print(\"Multiplication =\", a * b)\n",
+        "print(\"Division =\", a / b)\n",
+        "print(\"Floor Division =\", a // b)\n",
+        "print(\"Modulus =\", a % b)\n",
+        "print(\"Exponentiation =\", a ** b)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "  #2. Area of a Triangle Using Heron's Formula\n",
+        "  a = float(input(\"Enter first side: \"))\n",
+        "b = float(input(\"Enter second side: \"))\n",
+        "c = float(input(\"Enter third side: \"))\n",
+        "\n",
+        "s = (a + b + c) / 2\n",
+        "\n",
+        "area = (s * (s-a) * (s-b) * (s-c)) ** 0.5\n",
+        "\n",
+        "print(\"Area of Triangle =\", area)"
+      ],
+      "metadata": {
+        "id": "w5Kpr5Vavj3B"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#3.Binary, Octal and Hexadecimal Equivalents\n",
+        "n = int(input(\"Enter an integer number: \"))\n",
+        "\n",
+        "print(\"Binary equivalent =\", bin(n))\n",
+        "print(\"Octal equivalent =\", oct(n))\n",
+        "print(\"Hexadecimal equivalent =\", hex(n))"
+      ],
+      "metadata": {
+        "id": "QwDK-LXfwSE8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#4.Roots of a Quadratic Equation\n",
+        "import cmath\n",
+        "\n",
+        "a = float(input(\"Enter coefficient a: \"))\n",
+        "b = float(input(\"Enter coefficient b: \"))\n",
+        "c = float(input(\"Enter coefficient c: \"))\n",
+        "\n",
+        "d = b**2 - 4*a*c\n",
+        "\n",
+        "root1 = (-b + cmath.sqrt(d)) / (2*a)\n",
+        "root2 = (-b - cmath.sqrt(d)) / (2*a)\n",
+        "\n",
+        "print(\"First root =\", root1)\n",
+        "print(\"Second root =\", root2)"
+      ],
+      "metadata": {
+        "id": "FTnkc22fwceF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#5.Convert Fahrenheit to Celsius\n",
+        "f = float(input(\"Enter temperature in Fahrenheit: \"))\n",
+        "c = (f - 32) * 5 / 9\n",
+        "print(\"Temperature in Celsius =\", c)"
+      ],
+      "metadata": {
+        "id": "FfJn1DBXwiUj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. Convert Meters to Kilometers\n",
+        "m = float(input(\"Enter distance in meters: \"))\n",
+        "km = m / 1000\n",
+        "print(\"Distance in Kilometers =\", km)"
+      ],
+      "metadata": {
+        "id": "8VGssc4EwrGY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#7.Convert Minutes into Hours and Minutes\n",
+        "minutes = int(input(\"Enter time in minutes: \"))\n",
+        "hours = minutes // 60\n",
+        "remaining_minutes = minutes % 60\n",
+        "print(\"Time =\", hours, \"Hours and\", remaining_minutes, \"Minutes\")"
+      ],
+      "metadata": {
+        "id": "IlhMTZqowyzh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#8.Swap Two Numbers Using Bitwise XOR Operator\n",
+        "a = int(input(\"Enter first number: \"))\n",
+        "b = int(input(\"Enter second number: \"))\n",
+        "\n",
+        "a = a ^ b\n",
+        "b = a ^ b\n",
+        "a = a ^ b\n",
+        "\n",
+        "print(\"After swapping:\")\n",
+        "print(\"First number =\", a)\n",
+        "print(\"Second number =\", b)"
+      ],
+      "metadata": {
+        "id": "kaa5puHFw8B3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "M6wZaDNuxEEA"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
