@@ -1,0 +1,225 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMbU+9m8ulgH69p/84a6Vzr",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_09\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yywSP_FHYMIb",
+        "outputId": "8631a8ca-4f4d-46da-fc9d-fd9f5db8ad8f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Pandas Series:\n",
+            "a    10\n",
+            "b    20\n",
+            "c    30\n",
+            "dtype: int64\n",
+            "Value at label 'b': 20\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. WAP to Create and Work with a Pandas Series.\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = [10, 20, 30]\n",
+        "labels = ['a', 'b', 'c']\n",
+        "\n",
+        "series = pd.Series(data, index=labels)\n",
+        "\n",
+        "print(\"Pandas Series:\")\n",
+        "print(series)\n",
+        "\n",
+        "print(\"Value at label 'b':\", series['b'])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP to Create and Manipulate a DataFrame.\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = {\n",
+        "    'Name': ['Alice', 'Bob', 'Charlie'],\n",
+        "    'Age': [25, 30, 35],\n",
+        "    'City': ['New York', 'San Francisco', 'Los Angeles']\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "print(\"DataFrame:\")\n",
+        "print(df)\n",
+        "\n",
+        "print(\"\\nAge column:\")\n",
+        "print(df['Age'])\n",
+        "\n",
+        "print(\"\\nRow at index 1:\")\n",
+        "print(df.iloc[1])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "82YBJ09RYfK-",
+        "outputId": "688fe2c9-ac07-4633-e034-c5e4acdcca74"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "DataFrame:\n",
+            "      Name  Age           City\n",
+            "0    Alice   25       New York\n",
+            "1      Bob   30  San Francisco\n",
+            "2  Charlie   35    Los Angeles\n",
+            "\n",
+            "Age column:\n",
+            "0    25\n",
+            "1    30\n",
+            "2    35\n",
+            "Name: Age, dtype: int64\n",
+            "\n",
+            "Row at index 1:\n",
+            "Name              Bob\n",
+            "Age                30\n",
+            "City    San Francisco\n",
+            "Name: 1, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to Read CSV and JSON Files.\n",
+        "import pandas as pd\n",
+        "\n",
+        "with open('sample.csv', 'w') as f:\n",
+        "    f.write(\"Name,Age,City\\nAlice,25,New York\\nBob,30,San Francisco\\n\")\n",
+        "\n",
+        "with open('sample.json', 'w') as f:\n",
+        "    f.write('[{\"Name\":\"Alice\",\"Age\":25,\"City\":\"New York\"},{\"Name\":\"Bob\",\"Age\":30,\"City\":\"San Francisco\"}]')\n",
+        "\n",
+        "df_csv = pd.read_csv('sample.csv')\n",
+        "\n",
+        "print(\"DataFrame from CSV:\")\n",
+        "print(df_csv)\n",
+        "\n",
+        "df_json = pd.read_json('sample.json')\n",
+        "\n",
+        "print(\"\\nDataFrame from JSON:\")\n",
+        "print(df_json)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3LXNnONIY0Qt",
+        "outputId": "adc8ccdd-51fd-4c3a-dbd3-734d1e0fd7df"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "DataFrame from CSV:\n",
+            "    Name  Age           City\n",
+            "0  Alice   25       New York\n",
+            "1    Bob   30  San Francisco\n",
+            "\n",
+            "DataFrame from JSON:\n",
+            "    Name  Age           City\n",
+            "0  Alice   25       New York\n",
+            "1    Bob   30  San Francisco\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to Calculate the Correlation Between Columns in a DataFrame.\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = {\n",
+        "    'Math': [90, 85, 80, 95],\n",
+        "    'Science': [88, 82, 85, 90],\n",
+        "    'English': [78, 75, 80, 85]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "\n",
+        "print(\"DataFrame:\")\n",
+        "print(df)\n",
+        "\n",
+        "correlation = df.corr()\n",
+        "\n",
+        "print(\"\\nCorrelation Matrix:\")\n",
+        "print(correlation)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_S9QKvw1ZDa5",
+        "outputId": "cd7b1f0a-c4fc-4223-8ec2-1b011f14cb3d"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "DataFrame:\n",
+            "   Math  Science  English\n",
+            "0    90       88       78\n",
+            "1    85       82       75\n",
+            "2    80       85       80\n",
+            "3    95       90       85\n",
+            "\n",
+            "Correlation Matrix:\n",
+            "             Math   Science   English\n",
+            "Math     1.000000  0.774597  0.552866\n",
+            "Science  0.774597  1.000000  0.827040\n",
+            "English  0.552866  0.827040  1.000000\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
