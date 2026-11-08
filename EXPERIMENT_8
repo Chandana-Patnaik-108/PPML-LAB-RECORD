@@ -1,0 +1,282 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPLpfRTxOd8XwK0y//dK9g1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_8\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sq_0YYERVX-K",
+        "outputId": "f2446f57-aa89-484c-d094-1d394f8a73b0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [10 20 30 40 50 60]\n",
+            "First Element: 10\n",
+            "Third Element: 30\n",
+            "Last Element: 60\n",
+            "First Three Elements: [10 20 30]\n",
+            "Elements from Index 2 to 4: [30 40 50]\n",
+            "Elements from Index 2: [30 40 50 60]\n",
+            "Alternate Elements: [10 30 50]\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. WAP  for ndarray Object, Indexing, and Slicing.\n",
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([10, 20, 30, 40, 50, 60])\n",
+        "print(\"Original Array:\", arr)\n",
+        "\n",
+        "# Indexing\n",
+        "print(\"First Element:\", arr[0])\n",
+        "print(\"Third Element:\", arr[2])\n",
+        "print(\"Last Element:\", arr[-1])\n",
+        "\n",
+        "# Slicing\n",
+        "print(\"First Three Elements:\", arr[0:3])\n",
+        "print(\"Elements from Index 2 to 4:\", arr[2:5])\n",
+        "print(\"Elements from Index 2:\", arr[2:])\n",
+        "print(\"Alternate Elements:\", arr[::2])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP  for Data Types and Structures in NumPy.\n",
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([1, 2, 3], dtype='int32')\n",
+        "\n",
+        "print(\"Original Array:\", arr)\n",
+        "print(\"Data type:\", arr.dtype)\n",
+        "\n",
+        "arr = arr.astype('float64')\n",
+        "\n",
+        "print(\"Updated Array:\", arr)\n",
+        "print(\"Updated type:\", arr.dtype)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-Quq5EGjWo9T",
+        "outputId": "db968a8f-50ba-4f38-a242-d163cddaefc0"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [1 2 3]\n",
+            "Data type: int32\n",
+            "Updated Array: [1. 2. 3.]\n",
+            "Updated type: float64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# WAP for NumPy Array Properties and Functions.\n",
+        "import numpy as np\n",
+        "\n",
+        "# Creating arrays using NumPy functions\n",
+        "ones_array = np.ones((2, 3))\n",
+        "zeros_array = np.zeros((2, 3))\n",
+        "empty_array = np.empty((2, 3))\n",
+        "\n",
+        "print(\"Ones:\\n\", ones_array)\n",
+        "print(\"Zeros:\\n\", zeros_array)\n",
+        "print(\"Empty:\\n\", empty_array)\n",
+        "\n",
+        "# Array properties\n",
+        "arr = np.array([[1, 2, 3], [4, 5, 6]])\n",
+        "\n",
+        "print(\"Shape of array:\", arr.shape)\n",
+        "print(\"Size of array:\", arr.size)\n",
+        "print(\"Dimensions:\", arr.ndim)\n",
+        "print(\"Data type:\", arr.dtype)\n",
+        "\n",
+        "# Reshaping an array\n",
+        "reshaped = arr.reshape(3, 2)\n",
+        "print(\"Reshaped array:\\n\", reshaped)\n",
+        "\n",
+        "# Copy and View\n",
+        "arr1 = np.array([1, 2, 3])\n",
+        "\n",
+        "copy_arr1 = arr1.copy()\n",
+        "view_arr1 = arr1.view()\n",
+        "\n",
+        "print(\"Original:\", arr1)\n",
+        "print(\"Copy:\", copy_arr1)\n",
+        "print(\"View:\", view_arr1)\n",
+        "\n",
+        "# Concatenation\n",
+        "arr2 = np.array([1, 2])\n",
+        "arr3 = np.array([3, 4])\n",
+        "\n",
+        "concatenated = np.concatenate((arr2, arr3))\n",
+        "print(\"Concatenated array:\", concatenated)\n",
+        "\n",
+        "# Sorting\n",
+        "arr4 = np.array([5, 2, 9, 1])\n",
+        "print(\"Sorted array:\", np.sort(arr4))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZUjzCuUjXPTC",
+        "outputId": "8d01200c-0c48-481a-c670-79dd08e90344"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ones:\n",
+            " [[1. 1. 1.]\n",
+            " [1. 1. 1.]]\n",
+            "Zeros:\n",
+            " [[0. 0. 0.]\n",
+            " [0. 0. 0.]]\n",
+            "Empty:\n",
+            " [[1.85916224e-315 0.00000000e+000 0.00000000e+000]\n",
+            " [6.55707676e-312 1.02355570e-306 8.38288151e-249]]\n",
+            "Shape of array: (2, 3)\n",
+            "Size of array: 6\n",
+            "Dimensions: 2\n",
+            "Data type: int64\n",
+            "Reshaped array:\n",
+            " [[1 2]\n",
+            " [3 4]\n",
+            " [5 6]]\n",
+            "Original: [1 2 3]\n",
+            "Copy: [1 2 3]\n",
+            "View: [1 2 3]\n",
+            "Concatenated array: [1 2 3 4]\n",
+            "Sorted array: [1 2 5 9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP for Statistical Operations and Broadcasting on Arrays.\n",
+        "import numpy as np\n",
+        "arr = np.array([1, 2, 3, 4])\n",
+        "\n",
+        "# Statistical Operations\n",
+        "print(\"Original Array:\", arr)\n",
+        "print(\"Maximum:\", arr.max())\n",
+        "print(\"Minimum:\", arr.min())\n",
+        "print(\"Sum:\", arr.sum())\n",
+        "print(\"Product:\", arr.prod())\n",
+        "print(\"Mean:\", arr.mean())\n",
+        "\n",
+        "# Broadcasting\n",
+        "print(\"Broadcasted result:\", arr + 5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lJsSpawxXVs3",
+        "outputId": "3c087998-df92-439c-cf69-e6aebfd14664"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [1 2 3 4]\n",
+            "Maximum: 4\n",
+            "Minimum: 1\n",
+            "Sum: 10\n",
+            "Product: 24\n",
+            "Mean: 2.5\n",
+            "Broadcasted result: [6 7 8 9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP for Saving and Loading Arrays.\n",
+        "import numpy as np\n",
+        "arr = np.array([1, 2, 3, 4])\n",
+        "np.save('my_array', arr)\n",
+        "print(\"Array saved successfully.\")\n",
+        "\n",
+        "loaded_arr = np.load('my_array.npy')\n",
+        "\n",
+        "print(\"Loaded array:\", loaded_arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tl76YvlbXjsb",
+        "outputId": "16b1b875-7924-48f9-95ea-5bfb25b9b7f5"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array saved successfully.\n",
+            "Loaded array: [1 2 3 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "o6z4ueiPXzXb"
+      },
+      "execution_count": 5,
+      "outputs": []
+    }
+  ]
+}
