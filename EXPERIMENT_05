@@ -1,0 +1,142 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMMg5rLgQ6FJkHzWSoNJLmP",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_05\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "DifRB5jwCxW_"
+      },
+      "outputs": [],
+      "source": [
+        "# 1. WAP to input two dictionaries and print the values by merging the two dictionary.\n",
+        "dict1 = eval(input(\"Enter first dictionary: \"))\n",
+        "dict2 = eval(input(\"Enter second dictionary: \"))\n",
+        "\n",
+        "dict1.update(dict2)\n",
+        "\n",
+        "print(\"Merged dictionary:\", dict1)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP to create a dictionary and print the key which has the maximum unique values.\n",
+        "d = {'A': 10, 'B': 20, 'C': 30, 'D': 40}\n",
+        "\n",
+        "max_key = max(d, key=d.get)\n",
+        "\n",
+        "print(\"Key with maximum value:\", max_key)\n",
+        "print(\"Maximum value:\", d[max_key])"
+      ],
+      "metadata": {
+        "id": "qt2HMSxzDD8b"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to enter a dictionary and remove the duplicate value inside the dictionary\n",
+        "d = eval(input(\"Enter a dictionary: \"))\n",
+        "\n",
+        "new_dict = {}\n",
+        "\n",
+        "for key, value in d.items():\n",
+        "    if value not in new_dict.values():\n",
+        "        new_dict[key] = value\n",
+        "\n",
+        "print(\"Dictionary after removing duplicates:\", new_dict)"
+      ],
+      "metadata": {
+        "id": "k9243ObiDRzd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to enter a set and copy the content of the set into a new set one element at a time.\n",
+        "s1 = eval(input(\"Enter a set: \"))\n",
+        "\n",
+        "s2 = set()\n",
+        "\n",
+        "for i in s1:\n",
+        "    s2.add(i)\n",
+        "\n",
+        "print(\"Original set:\", s1)\n",
+        "print(\"Copied set:\", s2)"
+      ],
+      "metadata": {
+        "id": "S2jxDpLqDcw8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP to enter two sets and perform alll the set operations on it.\n",
+        "s1 = eval(input(\"Enter first set: \"))\n",
+        "s2 = eval(input(\"Enter second set: \"))\n",
+        "\n",
+        "print(\"Union:\", s1 | s2)\n",
+        "print(\"Intersection:\", s1 & s2)\n",
+        "print(\"Difference (s1 - s2):\", s1 - s2)\n",
+        "print(\"Difference (s2 - s1):\", s2 - s1)\n",
+        "print(\"Symmetric Difference:\", s1 ^ s2)\n",
+        "print(\"Subset:\", s1.issubset(s2))\n",
+        "print(\"Superset:\", s1.issuperset(s2))"
+      ],
+      "metadata": {
+        "id": "KxbemwoED2kj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. WAP to enter two different sets with string elements combine both the sets remove any duplicates are present, print the new set.\n",
+        "s1 = eval(input(\"Enter first set: \"))\n",
+        "s2 = eval(input(\"Enter second set: \"))\n",
+        "\n",
+        "s3 = s1.union(s2)\n",
+        "\n",
+        "print(\"Combined set:\", s3)"
+      ],
+      "metadata": {
+        "id": "bHgSgNQzEAJx"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
