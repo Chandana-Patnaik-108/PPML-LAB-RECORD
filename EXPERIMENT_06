@@ -1,0 +1,201 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN18703u0+qi4gAxdRk4Iki",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_06\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "H69L-acQEipX"
+      },
+      "outputs": [],
+      "source": [
+        "# 1. WAP to print a matrix containing group of similar elements by giving the input randomly in another matrix.\n",
+        "import random\n",
+        "\n",
+        "rows = int(input(\"Enter number of rows: \"))\n",
+        "cols = int(input(\"Enter number of columns: \"))\n",
+        "\n",
+        "matrix = []\n",
+        "\n",
+        "for i in range(rows):\n",
+        "    row = []\n",
+        "    for j in range(cols):\n",
+        "        row.append(random.randint(1, 5))\n",
+        "    matrix.append(row)\n",
+        "\n",
+        "print(\"Original Matrix:\")\n",
+        "for row in matrix:\n",
+        "    print(row)\n",
+        "\n",
+        "new_matrix = []\n",
+        "\n",
+        "for i in range(rows):\n",
+        "    row = []\n",
+        "    for j in range(cols):\n",
+        "        if matrix[i][j] == 1:\n",
+        "            row.append(1)\n",
+        "        else:\n",
+        "            row.append(matrix[i][j])\n",
+        "    new_matrix.append(row)\n",
+        "\n",
+        "print(\"New Matrix:\")\n",
+        "for row in new_matrix:\n",
+        "    print(row)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP to print a matrix along with a sumation of row elements and column elements after entering a 3*3 matrix.\n",
+        "matrix = []\n",
+        "\n",
+        "print(\"Enter 9 elements:\")\n",
+        "\n",
+        "for i in range(3):\n",
+        "    row = []\n",
+        "    for j in range(3):\n",
+        "        num = int(input())\n",
+        "        row.append(num)\n",
+        "    matrix.append(row)\n",
+        "\n",
+        "print(\"Matrix:\")\n",
+        "for row in matrix:\n",
+        "    print(row)\n",
+        "\n",
+        "for i in range(3):\n",
+        "    print(\"Sum of row\", i+1, \"=\", sum(matrix[i]))\n",
+        "\n",
+        "for j in range(3):\n",
+        "    total = 0\n",
+        "    for i in range(3):\n",
+        "        total = total + matrix[i][j]\n",
+        "    print(\"Sum of column\", j+1, \"=\", total)"
+      ],
+      "metadata": {
+        "id": "vj0eIgUQEvf7"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to print the transpose of a matrix of n*n order.\n",
+        "n = int(input(\"Enter the order of matrix: \"))\n",
+        "\n",
+        "matrix = []\n",
+        "\n",
+        "print(\"Enter matrix elements:\")\n",
+        "\n",
+        "for i in range(n):\n",
+        "    row = []\n",
+        "    for j in range(n):\n",
+        "        num = int(input())\n",
+        "        row.append(num)\n",
+        "    matrix.append(row)\n",
+        "\n",
+        "print(\"Original Matrix:\")\n",
+        "for row in matrix:\n",
+        "    print(row)\n",
+        "\n",
+        "print(\"Transpose of Matrix:\")\n",
+        "for i in range(n):\n",
+        "    for j in range(n):\n",
+        "        print(matrix[j][i], end=\" \")\n",
+        "    print()"
+      ],
+      "metadata": {
+        "id": "ScnMzIwiE8nV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to check if a value is present in the list or not, using lambda function.\n",
+        "lst = [10, 20, 30, 40, 50]\n",
+        "\n",
+        "num = int(input(\"Enter a value to search: \"))\n",
+        "\n",
+        "check = lambda x: x in lst\n",
+        "\n",
+        "if check(num):\n",
+        "    print(\"Value is present in the list\")\n",
+        "else:\n",
+        "    print(\"Value is not present in the list\")"
+      ],
+      "metadata": {
+        "id": "GbZFZOo_FF8f"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP to print Fibonacci series up to n terms using lambda function.\n",
+        "n = int(input(\"Enter number of terms: \"))\n",
+        "\n",
+        "a, b = 0, 1\n",
+        "\n",
+        "fib = lambda a, b: a + b\n",
+        "\n",
+        "print(\"Fibonacci Series:\")\n",
+        "\n",
+        "for i in range(n):\n",
+        "    print(a, end=\" \")\n",
+        "    a, b = b, fib(a, b)"
+      ],
+      "metadata": {
+        "id": "BDylmtTVFex8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. WAP to print the intersection of 2 arrays using lambda function.\n",
+        "arr1 = [10, 20, 30, 40, 50]\n",
+        "arr2 = [30, 40, 50, 60, 70]\n",
+        "\n",
+        "intersection = lambda a, b: list(set(a) & set(b))\n",
+        "\n",
+        "result = intersection(arr1, arr2)\n",
+        "\n",
+        "print(\"Intersection of two arrays:\", result)"
+      ],
+      "metadata": {
+        "id": "eLVrNHzhFwHZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
