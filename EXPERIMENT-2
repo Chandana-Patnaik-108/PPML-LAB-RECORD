@@ -1,0 +1,271 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPoVXPoO/KMtlZY7dy+kh6z",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT-2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cEr-EZ4K4g_4",
+        "outputId": "c3cdfd83-a527-49e1-e7b6-c2781f9fc983"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your percentage: 77\n",
+            "Grade C\n"
+          ]
+        }
+      ],
+      "source": [
+        "#1.WAP to enter a percentage and display the grading system\n",
+        "percentage = float(input(\"Enter your percentage: \"))\n",
+        "\n",
+        "if percentage >= 90:\n",
+        "    print(\"Grade A\")\n",
+        "elif percentage >= 80:\n",
+        "    print(\"Grade B\")\n",
+        "elif percentage >= 70:\n",
+        "    print(\"Grade C\")\n",
+        "elif percentage >= 60:\n",
+        "    print(\"Grade D\")\n",
+        "elif percentage >= 40:\n",
+        "    print(\"Grade E\")\n",
+        "else:\n",
+        "    print(\"Fail\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2.WAP to enter a 5-digit number and print the digits present at odd locations.\n",
+        "num = input(\"Enter a 5-digit number: \")\n",
+        "\n",
+        "if len(num) == 5 and num.isdigit():\n",
+        "    print(\"Digits at odd locations are:\")\n",
+        "    print(num[0])\n",
+        "    print(num[2])\n",
+        "    print(num[4])\n",
+        "else:\n",
+        "    print(\"Please enter a valid 5-digit number.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1N8P2APB5B0D",
+        "outputId": "abd3246a-4a6b-401f-80b0-8fe853f3992b"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a 5-digit number: 77777\n",
+            "Digits at odd locations are:\n",
+            "7\n",
+            "7\n",
+            "7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to enter a number and check wheather it is a palindrome number or not.\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "temp = num\n",
+        "rev = 0\n",
+        "\n",
+        "while num > 0:\n",
+        "    digit = num % 10\n",
+        "    rev = rev * 10 + digit\n",
+        "    num = num // 10\n",
+        "\n",
+        "if temp == rev:\n",
+        "    print(\"Palindrome Number\")\n",
+        "else:\n",
+        "    print(\"Not a Palindrome Number\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QgwvHGIG5Xw1",
+        "outputId": "4ea0a44e-ee55-49d3-801a-16e417d37c54"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 707\n",
+            "Palindrome Number\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to enter a number and check whether the number is perfect number or no\n",
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "sum = 0\n",
+        "\n",
+        "for i in range(1, num):\n",
+        "    if num % i == 0:\n",
+        "        sum = sum + i\n",
+        "\n",
+        "if sum == num:\n",
+        "    print(\"Perfect Number\")\n",
+        "else:\n",
+        "    print(\"Not a Perfect Number\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i3TNQtGz5imF",
+        "outputId": "75e880cd-8f8a-4597-c050-4f150cad9034"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 77\n",
+            "Not a Perfect Number\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP to enter a string and print it in reverse also print the no of vowels and consonant in it.\n",
+        "str1 = input(\"Enter a string: \")\n",
+        "\n",
+        "vowels = 0\n",
+        "consonants = 0\n",
+        "\n",
+        "print(\"Reverse string:\", str1[::-1])\n",
+        "\n",
+        "for ch in str1:\n",
+        "    if ch.isalpha():\n",
+        "        if ch.lower() in \"aeiou\":\n",
+        "            vowels += 1\n",
+        "        else:\n",
+        "            consonants += 1\n",
+        "\n",
+        "print(\"Number of vowels:\", vowels)\n",
+        "print(\"Number of consonants:\", consonants)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6TEE9gku5yhf",
+        "outputId": "d5b611b1-f9a2-4fa5-b080-2798d2c34119"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a string: CHAI\n",
+            "Reverse string: IAHC\n",
+            "Number of vowels: 2\n",
+            "Number of consonants: 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. WAP to enter a 3 digit number and print all the prime factors of the number.\n",
+        "num = int(input(\"Enter a 3-digit number: \"))\n",
+        "\n",
+        "print(\"Prime factors are:\")\n",
+        "\n",
+        "for i in range(2, num + 1):\n",
+        "    if num % i == 0:\n",
+        "        prime = True\n",
+        "\n",
+        "        for j in range(2, i):\n",
+        "            if i % j == 0:\n",
+        "                prime = False\n",
+        "                break\n",
+        "\n",
+        "        if prime:\n",
+        "            print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f97wgmLr5_bY",
+        "outputId": "3f01b56a-d506-4d4b-e4e9-c3dc767c360f"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a 3-digit number: 777\n",
+            "Prime factors are:\n",
+            "3\n",
+            "7\n",
+            "37\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "hoo9p2Xs6MuU"
+      },
+      "execution_count": 6,
+      "outputs": []
+    }
+  ]
+}
