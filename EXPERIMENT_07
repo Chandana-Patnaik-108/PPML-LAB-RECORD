@@ -1,0 +1,222 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPnoGXa14uKXblXbBi/bKfx",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chandana-Patnaik-108/PPML-LAB-RECORD/blob/main/EXPERIMENT_07\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xf-kZ7KhGW7K",
+        "outputId": "3b8c8f94-41c5-4e72-f517-53eacea59097"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original List: [1, 2, 3, 4, 5]\n",
+            "Tripled List: [3, 6, 9, 12, 15]\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 1. WAP to triple all numbers in a given list of integers. Use map()\n",
+        "lst = [1, 2, 3, 4, 5]\n",
+        "\n",
+        "result = list(map(lambda x: x * 3, lst))\n",
+        "\n",
+        "print(\"Original List:\", lst)\n",
+        "print(\"Tripled List:\", result)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. WAP to add three given list using python map and lambda.\n",
+        "list1 = [1, 2, 3, 4]\n",
+        "list2 = [5, 6, 7, 8]\n",
+        "list3 = [9, 10, 11, 12]\n",
+        "\n",
+        "result = list(map(lambda x, y, z: x + y + z, list1, list2, list3))\n",
+        "\n",
+        "print(\"Addition of three lists:\", result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7t5_iA4oGlT8",
+        "outputId": "6f7b7746-94ec-47eb-9a7a-b486275da6de"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Addition of three lists: [15, 18, 21, 24]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. WAP to create a list containing the power of said number in bases raised to the corresponding number in the index using python map.\n",
+        "n = int(input(\"Enter the number of elements: \"))\n",
+        "\n",
+        "bases = []\n",
+        "\n",
+        "for i in range(n):\n",
+        "    num = int(input(\"Enter a number: \"))\n",
+        "    bases.append(num)\n",
+        "\n",
+        "result = list(map(pow, bases, range(n)))\n",
+        "\n",
+        "print(\"Result:\", result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NvxpxAbtGttc",
+        "outputId": "013983a9-66ba-442e-85da-4d90d6ab0e18"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of elements: 2\n",
+            "Enter a number: 77\n",
+            "Enter a number: 65\n",
+            "Result: [1, 65]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 4. WAP to convert all the characters into uppercase and lowercase and eliminate duplicate letters from a given sequence. Use map() function.\n",
+        "s = input(\"Enter a sequence: \")\n",
+        "\n",
+        "uppercase = ''.join(map(str.upper, s))\n",
+        "lowercase = ''.join(map(str.lower, s))\n",
+        "\n",
+        "unique = ''.join(map(lambda x: x, dict.fromkeys(s)))\n",
+        "\n",
+        "print(\"Uppercase:\", uppercase)\n",
+        "print(\"Lowercase:\", lowercase)\n",
+        "print(\"After removing duplicates:\", unique)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rHh8iSgIG5tT",
+        "outputId": "95a9c3ae-9711-4686-d062-cf5685d27e93"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a sequence: SAERW\n",
+            "Uppercase: SAERW\n",
+            "Lowercase: saerw\n",
+            "After removing duplicates: SAERW\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 5. WAP to convert a given list of integer and a tuple of integer in a list of string using map().\n",
+        "n = int(input(\"Enter number of elements: \"))\n",
+        "\n",
+        "lst = []\n",
+        "tup = ()\n",
+        "\n",
+        "print(\"Enter list elements:\")\n",
+        "for i in range(n):\n",
+        "    num = int(input())\n",
+        "    lst.append(num)\n",
+        "\n",
+        "print(\"Enter tuple elements:\")\n",
+        "temp = []\n",
+        "for i in range(n):\n",
+        "    num = int(input())\n",
+        "    temp.append(num)\n",
+        "\n",
+        "tup = tuple(temp)\n",
+        "\n",
+        "list1 = list(map(str, lst))\n",
+        "list2 = list(map(str, tup))\n",
+        "\n",
+        "print(\"List of strings:\", list1)\n",
+        "print(\"Tuple converted into list of strings:\", list2)"
+      ],
+      "metadata": {
+        "id": "jnlTt8ecHLej"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 6. WAP to find the ratio of positive numbers, negative numbers and zeroes in an array of integers using map().\n",
+        "n = int(input(\"Enter number of elements: \"))\n",
+        "\n",
+        "arr = []\n",
+        "for i in range(n):\n",
+        "    num = int(input(\"Enter a number: \"))\n",
+        "    arr.append(num)\n",
+        "\n",
+        "positive = sum(map(lambda x: x > 0, arr))\n",
+        "negative = sum(map(lambda x: x < 0, arr))\n",
+        "zero = sum(map(lambda x: x == 0, arr))\n",
+        "\n",
+        "print(\"Ratio of positive numbers:\", positive / n)\n",
+        "print(\"Ratio of negative numbers:\", negative / n)\n",
+        "print(\"Ratio of zeroes:\", zero / n)"
+      ],
+      "metadata": {
+        "id": "dIkPnrX4HVZ2"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
